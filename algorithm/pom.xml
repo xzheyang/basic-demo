@@ -11,14 +11,13 @@
     </parent>
 
 
-    <artifactId>basic-demo-java</artifactId>
+
+    <artifactId>baisc-demo-algorithm</artifactId>
 
 
     <dependencies>
 
     </dependencies>
-
-
 
     <build>
         <plugins>
