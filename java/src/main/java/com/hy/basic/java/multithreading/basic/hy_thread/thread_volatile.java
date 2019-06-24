@@ -1,10 +1,11 @@
-package com.hy.basic.java.multithreading.basic.hy_basic;
+package com.hy.basic.java.multithreading.basic.hy_thread;
 
 public class thread_volatile implements Runnable{
 
     private volatile String fish="salt fish";
     //及时更新到主内存,从而实现分内存都更新
-    //阻止优化指令(即指令乱序)
+    //阻止优化指令(即指令乱序),保证可见性
+    //但是不保证原子性(类似累加,i*=5,或者使用到自己的操作都是有问题的)
 
 
     public void run() {

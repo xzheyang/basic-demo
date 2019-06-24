@@ -1,4 +1,4 @@
-package com.hy.basic.java.multithreading.basic.hy_basic;
+package com.hy.basic.java.multithreading.basic.hy_thread;
 
 public class thread_create0_wait implements Runnable {
 
@@ -25,7 +25,14 @@ public class thread_create0_wait implements Runnable {
             System.out.println(thread_start.TEST);
         }
 
+    }
 
+
+    /**
+     *  wait延迟
+     *  wait执行时会释放锁
+     */
+    public static void main(String[] args) {
 
 
     }

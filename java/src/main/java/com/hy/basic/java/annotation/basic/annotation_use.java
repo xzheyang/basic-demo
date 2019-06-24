@@ -36,7 +36,7 @@ public class annotation_use {
     }
 
 
-    @example_meaning(date = "2017.12.26", comments = "empty")
+    @example_meaning(date = "2017.12.26", comments = "注解")
     public void test2() throws ClassNotFoundException, NoSuchMethodException {
 
         System.out.println("注释信息(改良版):"+comments);
@@ -44,17 +44,20 @@ public class annotation_use {
     }
 
     //set方法
+    @example_meaning(date = "2019.06.20", comments = "empty")
     public void setComments(String comments) {
         this.comments = comments;
     }
 
     public static void main(String[] args) throws NoSuchMethodException, ClassNotFoundException, IntrospectionException {
         annotation_use use = new annotation_use();
+        //方式一:每次都解析
         use.test1();
+        //方法二:只解析一次,但是是在本身方法里
         use.test2();
 
 
-        //下面方法是内省调用注解
+        //方法三: 内省调用注解(只有set和get方法才会生效)
 
         //使用内省获得数据,除开父类Object
         BeanInfo nx =Introspector.getBeanInfo(Class.forName("com.hy.basic.java.annotation.basic.annotation_use"),Object.class);
@@ -74,7 +77,7 @@ public class annotation_use {
             if(a==null){
                 System.out.println(writeMethod.getName()+"方法没有em注释");
             }else{
-                System.out.println(writeMethod.getName()+"方法有em注释");
+                System.out.println(writeMethod.getName()+"方法有em注释( date = "+a.date()+" )");
             }
         }
 

@@ -1,4 +1,4 @@
-package com.hy.basic.java.multithreading.basic.hy_basic;
+package com.hy.basic.java.multithreading.basic.hy_thread;
 
 public class thread_join implements Runnable{
 

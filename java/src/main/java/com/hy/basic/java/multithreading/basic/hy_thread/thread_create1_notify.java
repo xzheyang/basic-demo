@@ -1,4 +1,4 @@
-package com.hy.basic.java.multithreading.basic.hy_basic;
+package com.hy.basic.java.multithreading.basic.hy_thread;
 
 public class thread_create1_notify extends Thread {
 
@@ -16,7 +16,7 @@ public class thread_create1_notify extends Thread {
 
 
             synchronized (thread_start.TEST){
-                System.out.println("线程1唤醒");
+                System.out.println("马上唤醒1个线程");
                 //线程唤醒,不释放锁
                 thread_start.TEST.notify();
                 System.out.println("但需要执行完这个,才释放锁");
@@ -25,5 +25,13 @@ public class thread_create1_notify extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+
+    /**
+     *  notify执行时不会释放锁
+     */
+    public static void main(String[] args) {
+
     }
 }

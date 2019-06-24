@@ -1,4 +1,4 @@
-package com.hy.basic.java.multithreading.basic.hy_synchronized;
+package com.hy.basic.java.multithreading.normal_use.hy_synchronized;
 
 public class s_basic {
 

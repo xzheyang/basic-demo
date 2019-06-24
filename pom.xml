@@ -16,6 +16,13 @@
 
     <dependencies>
 
+        <!-- 本项目很多都源于小例子,所以加入测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
     </dependencies>
 
     <build>
