@@ -40,6 +40,9 @@ public class CollectionsUse {
         /*1. list的foreach(Map的mapSet,set的iterator) 不能删元素回报错(因为本质是迭代器[fail-fast机制]),
                 而CopyOnWriteArrayList是因为复制了一遍(本质上是操作复制的List,如果删除了元素,iterator还是读老的数据[fail-safe机制])    */
 
+        /*2. Collections.sort()的实现:
+
+         */
 
     }
 

@@ -32,14 +32,16 @@ public class ThreadCreate {
         threadCreateExample2.start();
 
 
-        ExecutorService e = Executors.newFixedThreadPool(3);
+        ExecutorService service = Executors.newFixedThreadPool(1);
         //submit方法有多重参数版本，及支持callable也能够支持runnable接口类型.
-        Future future = e.submit(new Example_Callable());
-        future.isDone(); //return true,false 无阻塞
+        Future<Boolean> future = service.submit(new Example_Callable());
+        System.out.println(future.isDone()); //return true,false 无阻塞
         try {
-            future.get(); // return 返回值，阻塞直到该线程运行结束
+            future.get();// return 返回值，阻塞直到该线程运行结束
         } catch (InterruptedException | ExecutionException er) {
             er.printStackTrace();
+        }finally {
+            service.shutdown();//
         }
 
     }
@@ -59,14 +61,14 @@ public class ThreadCreate {
 
     }
 
-    static class Example_Callable implements Callable {
+    static class Example_Callable implements Callable<Boolean> {
 
         @Override
-        public Object call() throws Exception {
+        public Boolean call() throws Exception {
 
             System.out.println("实现Callable接口,使用ExecutorService创造Future线程");
 
-            return null;
+            return true;
         }
     }
 
