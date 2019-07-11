@@ -4,6 +4,8 @@ public class thread_create1_notify extends Thread {
 
     //例子在run运行
 
+    //notify:   线程唤醒,不释放锁,还是会执行后面代码
+
     @Override
     public void run() {
         System.out.println("继承Thread并重写run方法,创造线程1");

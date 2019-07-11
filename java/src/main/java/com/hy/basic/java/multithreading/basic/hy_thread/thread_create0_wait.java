@@ -2,6 +2,7 @@ package com.hy.basic.java.multithreading.basic.hy_thread;
 
 public class thread_create0_wait implements Runnable {
 
+    //wait: 将线程挂起,并且释放锁
 
     //例子在run运行
     public void run() {         //线程不能throw异常,因为出现异常异常线程就中断

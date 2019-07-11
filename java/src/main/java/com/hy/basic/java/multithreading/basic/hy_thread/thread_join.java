@@ -2,6 +2,8 @@ package com.hy.basic.java.multithreading.basic.hy_thread;
 
 public class thread_join implements Runnable{
 
+    //join: 当我们调用某个线程的这个方法时，这个方法会挂起调用线程，直到被调用线程结束执行，调用线程才会继续执行。
+
     public void run() {
 
         System.out.println("合体");
@@ -9,7 +11,7 @@ public class thread_join implements Runnable{
             Thread.sleep(1000);
             System.out.println("Loading...");
             Thread.sleep(1000);
-            System.out.println("还在合体(其实已经成功,不然主程序先走)");
+            System.out.println("合体完成(调用线程开始运行)");
 
         } catch (InterruptedException e) {
             e.printStackTrace();
