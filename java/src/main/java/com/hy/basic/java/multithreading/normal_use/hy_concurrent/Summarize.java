@@ -15,8 +15,8 @@ public class Summarize {
     public static void main(String[] args) throws Exception {
 
 //        CountDownLatchEg.countDownLatch();
-//        CyclicBarrierEg.cyclicBarrier();
-        SemaphoreEg.semaphore();
+        CyclicBarrierEg.cyclicBarrier();
+//        SemaphoreEg.semaphore();
 
         /*
                 总结: 1.CountDownLatch是一个线程等待子线程执行完再执行

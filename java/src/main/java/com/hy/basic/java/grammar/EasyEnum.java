@@ -35,6 +35,10 @@ public enum EasyEnum {
 
         System.out.println(STATUS_500.getMessage());
 
+        //枚举与数字的转换(不能直接转换,只能通过 1.写静态方法判断  2.使用valueOf拼接字符串 3.values()方法的数组获取)
+        System.out.println(values()[0]);
+
     }
+
 
 }

@@ -1,4 +1,4 @@
-package com.hy.basic.java.multithreading.normal_use.hy_concurrent;
+package com.hy.basic.java.multithreading.normal_use;
 
 /**
  * @user yang.he
@@ -6,7 +6,6 @@ package com.hy.basic.java.multithreading.normal_use.hy_concurrent;
  * @introduce
  **/
 public class ThreadLocalEg {
-
 
     //ThreadLocal简单示例
     public static void simple(ThreadLocal<Long> threadLocal) {
@@ -51,7 +50,7 @@ public class ThreadLocalEg {
                 虽然Entry实现了WeakReference<ThreadLocal>(Entry弱引用了key,然后封装成了ThreadLocal),
                     但是只有在ThreadLocal(也就是key)没有其它(强,软)引用时候才会被GC掉.
                     而当线程结束时,里面的强引用必然会消失,所以不会内存溢出
-                    fixme 而thread引用了ThreadLocal.ThreadLocalMap(里面包含Entry数组)来保证不同ThradLocal引用
+                    fixme 但是线程池可能会导致问题出现内存溢出(应该用完后清理)或者脏数据的问题
                     // fix 但是当ThreadLocal即key是静态或者被其他一直强引用时才会内存溢出
          */
 
@@ -65,6 +64,7 @@ public class ThreadLocalEg {
                 a.添加新map不会有问题吗
                 b.老的map的新set操作导致扩容不会导致同时操作的不同线程发生错误吗
                 c.get因为本质是1个线程不会发生问题
+
          */
 
         /*

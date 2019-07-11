@@ -21,7 +21,6 @@ public class annotation_use {
 
 
     //上面方法解析注释很多次,应该只解析一次
-
     private String comments;
 
     {
