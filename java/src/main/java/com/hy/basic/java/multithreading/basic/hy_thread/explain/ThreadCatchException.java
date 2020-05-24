@@ -3,7 +3,7 @@ package com.hy.basic.java.multithreading.basic.hy_thread.explain;
 /**
  * @user yang.he
  * @date 2019/7/10
- * @introduce       线程异常
+ * @introduce       线程异常如何捕获
  **/
 public class ThreadCatchException {
 
@@ -28,11 +28,16 @@ public class ThreadCatchException {
     }
 
     public static void main(String[] args) {
-        Thread thread = getThread();
 
         //线程捕获异常不能直接try catch
+
+        //通过设置异常处理器(可设置动态[也可在线程池中设置],静态)
+        Thread thread = getThread();
         thread.setUncaughtExceptionHandler(new IUnCheckedExceptionHandler());
+//        Thread.setDefaultUncaughtExceptionHandler(new IUnCheckedExceptionHandler());    //也可设置静态异常
         thread.start();
+
+
 
 
     }

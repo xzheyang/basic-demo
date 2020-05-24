@@ -1,4 +1,4 @@
-package com.hy.basic.java.multithreading.example;
+package com.hy.basic.algorithm.title;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -68,11 +68,8 @@ public class CyclicBarrierTest {
                     System.out.println(Thread.currentThread().getName() + "-thread:终止这场比赛,传送去终点");
                     cyclicBarrier.await();
                     System.out.println(Thread.currentThread().getName() + "-thread:准备下一个任务");
-                } catch (InterruptedException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                } catch (BrokenBarrierException e1) {
-                    // TODO Auto-generated catch block
+                } catch (InterruptedException | BrokenBarrierException e1) {
+                    // Auto-generated catch block
                     e1.printStackTrace();
                 }
             }

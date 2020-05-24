@@ -1,7 +1,9 @@
-package com.hy.basic.java.grammar.java8features;
+package com.hy.basic.java.grammar.java8features.lambda;
+
+import com.hy.basic.java.grammar.java8features.functions.FuncInterface;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -43,9 +45,7 @@ public class Lambda {
 
         //对支持Lambda的方法进行调用
         List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
-        Collections.sort(names, (String a, String b) -> {
-            return b.compareTo(a);
-        });
+        names.sort(Comparator.reverseOrder());
         //见Symbol
         names.forEach(System.out::println);
 

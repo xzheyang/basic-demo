@@ -1,8 +1,11 @@
 package com.hy.basic.java.grammar.java8features.lambda;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
@@ -32,10 +35,13 @@ public class LambdaBasic {
 
 
     public static void main(String[] args) {
-        List<String> test = new ArrayList<>(Arrays.asList("1","2","3"));
-//        test.forEach(pack(s-> System.out.println(s)));
+        List<String> test = new ArrayList<>(Arrays.asList("1","2","",null,"3"));
 
-        test.forEach(myPack(s-> System.out.println(s)));
+
+        test.stream().
+//                filter(Objects::nonNull).
+                filter(StringUtils::isNotBlank).
+                forEach(myPack(System.out::println));
     }
 
 }
