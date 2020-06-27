@@ -8,6 +8,7 @@ import java.lang.annotation.*;
  *
  */
 
+@Documented
 @Inherited                  //继承注解在单数注解使用
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
